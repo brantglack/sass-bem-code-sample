@@ -1,0 +1,80 @@
+.accordion {
+  border: 0px solid black;
+  width: 100%;
+  margin: 0 auto;
+
+  &--header {
+    border: 1px solid #FFF;
+    text-align: left;
+    padding: 15px 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: $blue;
+    color: #fff;
+  }
+
+  &--closed {
+    .accordion--body {
+      overflow: hidden;
+      height: 0px;
+      background-color: #fff;
+      padding: 0px 20px;
+    }
+  }
+
+  &--open {
+    .accordion--body {
+      overflow: scroll;
+      background-color: #fff;
+      position: relative;
+      padding: 15px 0px;
+
+      img {
+        max-height: 400px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (min-width:$mobileSize) {
+  .accordion {
+    border: 0px solid black;
+    padding: 10px 20px;
+    width: 90%;
+    margin: 0 auto;
+
+    &--header {
+      background-color: #fff;
+      border: 1px solid #bbb;
+      color: #000;
+      text-align: left;
+    }
+
+    &--closed {
+      .accordion--body {
+        overflow: hidden;
+        height: 0px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px black;
+        padding: 0px 20px;
+      }
+    }
+
+    &--open {
+      .accordion--body {
+        overflow: scroll;
+        height: auto;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px black;
+        padding: 0px 20px;
+        position: relative;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+}
